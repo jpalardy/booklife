@@ -1,0 +1,6 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+jonathan:
+  username: jonathan
+  openid: "http://jonathan.palardy.myopenid.com"
+

@@ -1,0 +1,12 @@
+
+log
+tmp
+index
+
+db/*.sqlite3
+*.swp
+
+lib/tasks/fetch_prod.rake
+config/initializers/variables.rb
+*.sql
+

@@ -1,0 +1,6 @@
+
+<% (Status.all & grouped.keys).each do |status| %>
+  <h3 class="status"><%= status %></h3>
+  <%= show_books(grouped[status].collect(&:book), mode) %>
+<% end -%>
+

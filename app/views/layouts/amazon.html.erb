@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title><%= request.host %><%= yield(:title) %></title>
+  <%= stylesheet_link_tag 'screen' %>
+  <%= stylesheet_link_tag 'print', :media => 'print' %>
+  <!--[if IE]>
+  <%= stylesheet_link_tag 'ie' %>
+  <![endif]-->
+  <%= stylesheet_link_tag   'custom_all', :media => 'all' %>
+  <%= stylesheet_link_tag 'custom_print', :media => 'print' %>
+  <%= javascript_include_tag 'jquery-1.2.6.min.js' %>
+  <%= javascript_include_tag 'jquery.hotkeys-0.7.8-packed.js' %>
+  <%= javascript_include_tag 'jquery.corners.min.js' %>
+  <%= javascript_include_tag 'application.js' %>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div id="header" class="span-24">
+      <%= link_to 'booklife: books come and go...', login_path, :id => 'logo' %>
+      <%= login_logout_link %>
+      <% flash.each do |type, message| %>
+        <%= content_tag :div, message, :class => "#{type} rounded" %>
+      <% end %>
+    </div>
+
+    <div id="nav" class="push-4 span-20 last">
+      <%= nav_links %>
+      <% form_tag amazon_path, :method => :get do -%>
+        <%= text_field_tag 'q', params[:q], :size => 20 %>
+        <%= submit_tag 'search', :name => nil %>
+      <% end -%>
+    </div>
+
+    <div id="content" class="span-20 push-4 last">
+      <%= yield %>
+    </div>
+
+    <div id="footer" class="span-24">
+       Copyright (c) 2008 Jonathan Palardy
+    </div>
+
+  </div>
+
+</body>
+</html>
+

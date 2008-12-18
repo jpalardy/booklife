@@ -1,0 +1,27 @@
+
+<% title "#{@username}'s \"#{@ownership.book.title}\"" %>
+
+<% if @username == myself -%>
+  <% content_for :book do -%>
+    <tr>
+      <td class="field_name">Status:</td>
+      <td>
+      <%= link_to @ownership.status, edit_ownership_path(@username, @ownership.isbn) %>
+      </td>
+    </tr>
+  <% end -%>
+<% end -%>
+
+<%= show_book(@ownership.book) %>
+
+<% if logged_in? -%>
+<div class="after_book">
+<% if @username == myself -%>
+  <%= link_to   'edit', edit_ownership_path(@username, @ownership.isbn) %>
+  <%= link_to 'delete', ownership_path(@username), :method => :delete, :confirm => 'Delete this book?' %>
+<% else -%>
+  <%= link_to 'add to my books', ownership_path(myself, @ownership.isbn) %>
+<% end -%>
+</div>
+<% end -%>
+

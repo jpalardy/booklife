@@ -1,0 +1,248 @@
+/**************************************************************
+  general
+ **************************************************************/
+
+ul {
+  list-style: none
+}
+
+/**************************************************************
+  colors
+ **************************************************************/
+
+.container, a, h3.status {
+  color: #eee6d0;
+}
+
+.container {
+  background: #2a2c31;
+}
+
+td.book_image img {
+  background: #fff;
+}
+
+body, #content, li.selected {
+  background: #3e4147;
+}
+
+#nav li.selected a, #sidebar li.selected a {
+  color: #eee6d0;
+}
+
+a:hover, #nav li a:hover, #sidebar li a:hover {
+  color: #b87b5f;
+}
+
+div#header {
+  background: url(/images/logo.gif) no-repeat 0 0;
+}
+
+/**************************************************************
+  book grid/list
+ **************************************************************/
+
+table.book {
+  margin: 15px 0 10px 5px;
+  float: left;
+  height: 175px;
+}
+
+table.grid {
+  width: 170px;
+}
+
+table.list {
+  width: 670px;
+}
+
+  td.book_image, td.book_details {
+    padding: 0;
+    vertical-align: top;
+  }
+
+  td.book_image {
+    text-align: center;
+    width: 170px;
+  }
+
+      td.book_image img {
+        padding: 4px;
+        border: 1px solid #a9a9a9;
+      }
+
+  td.book_details {
+    padding-left: 15px;
+  }
+
+      td.field_name {
+        text-align: right;
+        font-weight: bold;
+        width: 15%;
+      }
+
+/**************************************************************
+  layout
+ **************************************************************/
+
+#content {
+  min-height: 600px;
+  padding-bottom: 30px;
+}
+
+div#header {
+  height: 190px;
+}
+
+#sidebar {
+  font-size: 150%;
+}
+
+    #sidebar li {
+      display: block;
+      width: 133px;
+    }
+
+    #sidebar a {
+      text-decoration: none;
+      padding: 10px 0 10px 20px;
+      display: block;
+    }
+
+#footer {
+  height: 60px;
+}
+
+
+/**************************************************************/
+
+div.login_logout {
+  float: right;
+}
+
+#mode_buttons {
+  float: right;
+  padding-top: 15px;
+}
+
+#mode_buttons img, #mode_buttons a {
+  float: left;
+}
+
+.error, .notice, .success {
+  margin-top: 5px;
+  clear: right;
+  float: right;
+}
+
+/**************************************************************
+  nav
+ **************************************************************/
+
+#nav {
+  font-size: 150%;
+  position: relative;
+  height: 70px;
+  margin-bottom: 0;
+}
+
+    #nav ul {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      margin: 0;
+    }
+
+    #nav li {
+      display: block;
+      float: left;
+    }
+
+    #nav a {
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+    }
+
+    #nav form {
+      position: absolute;
+      right: 0;
+      bottom: 12px;
+    }
+
+/**************************************************************/
+
+div.message {
+  font-size: 125%;
+  margin: 25px;
+  display: block;
+}
+
+ul#users li {
+  display: inline;
+  padding-right: 5px;
+}
+
+h3.status {
+  clear: left;
+  padding: 15px 20px -4px 20px;
+}
+
+#openid_url {
+  background: url(/images/login-bg.gif) no-repeat #FFF 5px;
+  padding-left: 25px;
+  width: 300px;
+}
+
+/**************************************************************
+  register form
+ **************************************************************/
+
+#register_form {
+  margin-top: 15px;
+}
+
+#register_form p {
+  margin-bottom: 8px;
+}
+
+#register_form label {
+  float: left;
+  clear: left;
+  width: 100px;
+  text-align: right;
+  margin-right: 15px;
+}
+
+#register_form input {
+  margin-top: -2px;
+}
+
+#register_form #register {
+  margin-left: 115px;
+}
+
+/**************************************************************
+  logo
+ **************************************************************/
+
+#header a#logo {
+  float: left;
+  display: block;
+  width: 500px;
+  height: 190px;
+  text-indent: -5000px;
+}
+
+/**************************************************************/
+
+.after_book {
+  clear: left;
+  margin: 15px;
+}
+
+a.external {
+  padding-right: 16px;
+  background: url(/images/external.png) no-repeat top right;
+}
+

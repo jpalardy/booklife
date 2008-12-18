@@ -1,0 +1,25 @@
+
+<div id="register_form">
+<% form_tag register_path do -%>
+  <p>
+  <%= label_tag :username, 'Username:' %>
+  <%= text_field_tag :username, @username %>
+  </p>
+
+  <p>
+  <%= label_tag :openid_url, 'OpenID:' %>
+  <%= text_field_tag :openid_url, @openid %>
+  </p>
+
+  <p>
+  <%= submit_tag 'register', :name => nil, :id => 'register' %> <%= link_to 'cancel', login_path %>
+  </p>
+<% end -%>
+</div>
+
+<% javascript_tag do -%>
+  $(document).ready(function() {
+    $('#register_form input:text:first').focus();
+  });
+<% end -%>
+

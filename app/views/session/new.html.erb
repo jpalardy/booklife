@@ -1,0 +1,13 @@
+
+<% title "login" %>
+
+<div class="message">
+  <%= make_ul(@users.collect {|user| [link_to(user.username, ownerships_path(user.username)), {}]}, :id => 'users') %>
+</div>
+
+<% javascript_tag do -%>
+  $(document).ready(function() {
+    $('#nav input:text').focus();
+  });
+<% end -%>
+

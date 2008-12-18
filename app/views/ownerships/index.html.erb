@@ -1,0 +1,21 @@
+
+<% title "#{@username}'s books (#{@status})" %>
+
+<div id="mode_buttons">
+  <%= mode_button('grid', @mode) %>
+  <%= mode_button('list', @mode) %>
+</div>
+
+<% if @status == 'all' -%>
+  <%= show_grouped(@ownerships, @mode) %>
+<% else -%>
+  <%= show_books(@ownerships.collect(&:book), @mode) %>
+<% end -%>
+
+<% javascript_tag do -%>
+  $(document).ready(function() {
+    <% if @mode == 'list' -%>$(document).bind('keypress', {combi:'1', disableInInput: true}, function() { location = '<%= url_for_mode('grid', false) %>'; });<% end -%>
+    <% if @mode == 'grid' -%>$(document).bind('keypress', {combi:'2', disableInInput: true}, function() { location = '<%= url_for_mode('list', false) %>'; });<% end %>
+  });
+<% end -%>
+

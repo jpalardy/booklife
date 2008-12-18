@@ -1,0 +1,35 @@
+<table class="book <%= mode %>">
+  <tr>
+    <td class="book_image">
+      <%= cover_link(book) %>
+    </td>
+<% if mode == 'list' -%>
+    <td class="book_details">
+      <table>
+        <tr>
+          <td class="field_name">Title:</td>
+          <td><%= book.title %></td>
+        </tr>
+        <tr>
+          <td class="field_name">Authors:</td>
+          <td><%= book.authors %></td>
+        </tr>
+        <tr>
+          <td class="field_name">ISBN:</td>
+          <td><%= link_to book.isbn, "http://www.amazon.com/gp/product/#{book.isbn}", :class => 'external' %></td>
+        </tr>
+        <tr>
+          <td class="field_name">Published:</td>
+          <td><%= book.published_on %></td>
+        </tr>
+        <tr>
+          <td class="field_name">Pages:</td>
+          <td><%= book.pages %></td>
+        </tr>
+<%= yield(:book) -%>
+      </table>
+    </td>
+<% end -%>
+  </tr>
+</table>
+

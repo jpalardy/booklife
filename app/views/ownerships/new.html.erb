@@ -1,0 +1,19 @@
+
+<% title "#{@username}'s \"#{@ownership.book.title}\"" %>
+
+<% content_for :book do -%>
+    <tr>
+      <td class="field_name">Status:</td>
+      <td>
+        <% form_tag ownerships_path(@username) do -%>
+          <%= hidden_field_tag 'isbn', @ownership.book.isbn %>
+          <%= select :ownership, :status, Status.all, {}, :name => 'status' %>
+          <%= submit_tag 'add' %>
+          <%= link_to 'cancel', back_url_or(ownerships_path(@username)) %>
+        <% end -%>
+      </td>
+    </tr>
+<% end -%>
+
+<%= show_book(@ownership.book) %>
+

@@ -1,0 +1,19 @@
+
+#header, #footer, #sidebar, #mode_buttons, #nav, #about_amazon, div.after_book {
+  display: none;
+}
+
+div.book_list {
+  padding-top: 20px;
+  clear: left;
+}
+
+td.book_image {
+  padding: 0;
+}
+
+td.book_image img {
+  padding: 0;
+  border: 0;
+}
+
