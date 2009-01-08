@@ -22,6 +22,8 @@ Rails::Initializer.run do |config|
     :session_key => '_booklife_session',
     :secret      => $SESSION_SECRET
   }
+
+  config.active_record.observers = :ownership_observer
 end
 
 raise 'enter value for $AMAZON_ACCESS_KEY_ID' unless $AMAZON_ACCESS_KEY_ID # defined in config/initializers/variables.rb

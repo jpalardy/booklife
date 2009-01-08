@@ -7,10 +7,6 @@ class Ownership < ActiveRecord::Base
 
   before_validation_on_create :cache_isbn
 
-  after_create  :create_event
-  after_update  :update_event
-  after_destroy :destroy_event
-
   ############################################################
 
   def self.find_with_ferret(*args)
@@ -25,22 +21,6 @@ class Ownership < ActiveRecord::Base
 
   def cache_isbn
     self.isbn = self.book.isbn if self.book
-  end
-
-  #-------------------------------------------------
-
-  def create_event
-    self.user.events.create(:description => "CREATED: status '#{self.status}'", :book => self.book)
-  end
-
-  def update_event
-    if self.changed?
-      self.user.events.create(:description => "UPDATED: status changed from '#{self.changes["status"].first}' to '#{self.changes["status"].last}'", :book => self.book)
-    end
-  end
-
-  def destroy_event
-    self.user.events.create(:description => "DELETED", :book => self.book)
   end
 
 end
